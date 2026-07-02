@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatedSpan, Terminal, TypingAnimation } from "@/components/ui/terminal";
 import { useTabs } from "@/providers/TabsProvider";
-import Title from "../atoms/title";
+import SectionTitle from "../atoms/sectionTitle";
 import SocialButton from "../kokonutui/social-buttons";
 import ParallaxBox from "../layout/parallaxBox";
 import Section, { SectionContent } from "../layout/section";
@@ -28,7 +28,7 @@ export default function ContacSection() {
           </ParallaxBox>
         </SequenceItem>
       </SectionContent>
-      <Title>Contact</Title>
+      <SectionTitle>Contact</SectionTitle>
     </Section>
   );
 }

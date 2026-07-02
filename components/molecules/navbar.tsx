@@ -8,22 +8,22 @@ export default function Navbar() {
       items={[
         {
           id: "presentation",
-          title: "Me",
+          SectionTitle: "Me",
           color: "bg-gradient-to-r from-primary/80 to-primary/65",
         },
         {
           id: "projects",
-          title: "Projects",
+          SectionTitle: "Projects",
           color: "bg-gradient-to-r from-primary/65 to-primary/50",
         },
         {
           id: "skills",
-          title: "Skills",
+          SectionTitle: "Skills",
           color: "bg-gradient-to-r from-primary/50 to-secondary/50",
         },
         {
           id: "contacts",
-          title: "Contact",
+          SectionTitle: "Contact",
           color: "bg-gradient-to-r from-secondary/50 to-secondary",
         },
       ]}

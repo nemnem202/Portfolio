@@ -34,7 +34,7 @@ body.page-transition #page-content {
   opacity: 0;
 }
 
-.title {
+.SectionTitle {
   font-family: "Syne", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;

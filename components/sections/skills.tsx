@@ -1,5 +1,5 @@
 import AnimatedProgressBar from "../atoms/progressBar";
-import Title from "../atoms/title";
+import SectionTitle from "../atoms/sectionTitle";
 import AppleActivityCard from "../kokonutui/activity-card";
 import ParallaxBox from "../layout/parallaxBox";
 import Section, { SectionContent } from "../layout/section";
@@ -10,7 +10,7 @@ export default function SkillSection() {
   return (
     <Section id="skills">
       <SizeAdapter sm={<MobileSkillsDisplay />} md={<DesktopSkillsDisplay />} />
-      <Title>Skills</Title>
+      <SectionTitle>Skills</SectionTitle>
     </Section>
   );
 }
@@ -24,7 +24,7 @@ function DesktopSkillsDisplay() {
           className="col-start-1 row-start-1 row-end-3 flex justify-center items-center"
         >
           <ParallaxBox>
-            <AppleActivityCard title="Programming" />
+            <AppleActivityCard SectionTitle="Programming" />
           </ParallaxBox>
         </LazyMountSequenceItem>
         <LazyMountSequenceItem
@@ -32,7 +32,7 @@ function DesktopSkillsDisplay() {
           className="col-start-2 row-start-5 row-end-7 flex justify-center items-center"
         >
           <ParallaxBox>
-            <AppleActivityCard title="Ci/CD" />
+            <AppleActivityCard SectionTitle="Ci/CD" />
           </ParallaxBox>
         </LazyMountSequenceItem>
 
@@ -41,7 +41,7 @@ function DesktopSkillsDisplay() {
           className="col-start-4 row-start-3 row-end-4 flex justify-center items-center"
         >
           <ParallaxBox>
-            <AppleActivityCard title="Mock-up creation" />
+            <AppleActivityCard SectionTitle="Mock-up creation" />
           </ParallaxBox>
         </LazyMountSequenceItem>
 

@@ -1,4 +1,4 @@
-import Title from "../atoms/title";
+import SectionTitle from "../atoms/sectionTitle";
 import EmblaCarousel from "../layout/emblacarousel";
 import ParallaxBox from "../layout/parallaxBox";
 import Section, { SectionContent } from "../layout/section";
@@ -11,7 +11,7 @@ export default function ProjectsSection() {
   return (
     <Section id="projects">
       <SizeAdapter md={<DesktopProjectDisplay />} sm={<MobileProjectDisplay />} />
-      <Title>Projects</Title>
+      <SectionTitle>Projects</SectionTitle>
     </Section>
   );
 }

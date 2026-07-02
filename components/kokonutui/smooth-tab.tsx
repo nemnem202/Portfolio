@@ -18,7 +18,7 @@ import { cn } from "@/lib/utils";
 
 interface TabItem {
   id: Section;
-  title: string;
+  SectionTitle: string;
   description?: string;
   icon?: LucideIcon;
   content?: React.ReactNode;
@@ -206,8 +206,8 @@ export default function SmoothTab({
           const isSelected = selected === item.id;
           return (
             <motion.button
-              aria-label={item.title}
-              name={`tab-${item.title}`}
+              aria-label={item.SectionTitle}
+              name={`tab-${item.SectionTitle}`}
               className={cn(
                 "relative flex items-center justify-center gap-0.5 rounded-lg px-2 py-1.5",
                 "font-medium text-sm transition-all duration-300 cursor-pointer",
@@ -226,7 +226,7 @@ export default function SmoothTab({
               tabIndex={isSelected ? 0 : -1}
               type="button"
             >
-              <span className="truncate">{item.title}</span>
+              <span className="truncate">{item.SectionTitle}</span>
             </motion.button>
           );
         })}

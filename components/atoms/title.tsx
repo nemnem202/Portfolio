@@ -1,5 +1,9 @@
-import { ReactNode } from "react";
+import ShinyText from "./shinyText";
 
-export default function Title({ children }: { children: ReactNode }) {
-  return <h1 className="text-[15rem]/[9rem] title bold opacity-10 hidden md:block">{children}</h1>;
+export default function Title({ text }: { text: string }) {
+  return (
+    <h1 className="text-xl font-bold">
+      <ShinyText text={text} />
+    </h1>
+  );
 }

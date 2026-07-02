@@ -13,6 +13,7 @@
 import { motion } from "motion/react";
 import { useEffect } from "react";
 import { cn } from "@/lib/utils";
+import SectionTitle from "../atoms/sectionTitle";
 
 interface ActivityData {
   label: string;
@@ -83,7 +84,7 @@ const CircleProgress = ({ data, index }: CircleProgressProps) => {
           viewBox={`0 0 ${data.size} ${data.size}`}
           width={data.size}
         >
-          <title>{`${data.label} Activity Progress - ${data.value}%`}</title>
+          <SectionTitle>{`${data.label} Activity Progress - ${data.value}%`}</SectionTitle>
 
           <defs>
             <linearGradient id={gradientId} x1="0%" x2="100%" y1="0%" y2="100%">
@@ -169,14 +170,14 @@ const DetailedActivityInfo = () => {
 };
 
 export default function AppleActivityCard({
-  title = "Activity Rings",
+  SectionTitle = "Activity Rings",
   className,
 }: {
-  title?: string;
+  SectionTitle?: string;
   className?: string;
 }) {
   useEffect(() => {
-    console.log("Init", title);
+    console.log("Init", SectionTitle);
   }, []);
   return (
     <div
@@ -193,7 +194,7 @@ export default function AppleActivityCard({
           initial={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
         >
-          {title}
+          {SectionTitle}
         </motion.h2>
 
         <div className="flex md:flex-row flex-col items-center">

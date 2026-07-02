@@ -1,8 +1,13 @@
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import SectionTitle from "../atoms/sectionTitle";
+import ShinyText from "../atoms/shinyText";
+import Tag from "../atoms/tag";
 import Title from "../atoms/title";
 import ParallaxBox from "../layout/parallaxBox";
 import Section, { SectionContent } from "../layout/section";
 import { SequenceItem } from "../layout/sequenceItem";
 import SizeAdapter from "../layout/size-adapter";
+import { Button } from "../ui/button";
 
 export default function PresentationSection() {
   return (
@@ -10,7 +15,7 @@ export default function PresentationSection() {
       <SectionContent className="flex gap-12" animateOnScroll={false}>
         <SizeAdapter md={<DesktopPresentation />} sm={<MobilePresentation />} />
       </SectionContent>
-      <Title>Me</Title>
+      <SectionTitle>Me</SectionTitle>
     </Section>
   );
 }
@@ -90,17 +95,55 @@ function DesktopPresentation() {
 }
 
 function MobilePresentation() {
+  const tags = ["React", "Angular", "Typescript", "NodeJS", "Express", "Fastify", "Docker"];
   return (
-    <SectionContent className="flex flex-col size-full items-center">
-      <SequenceItem className="my-5" index={0}>
-        <ParallaxBox className=" rounded-full w-full aspect-square shadow-2xl shadow-primary/40">
-          <img
-            className="size-full rounded-full mx-auto object-cover"
-            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=256&auto=format&fit=crop"
-            alt="Avatar"
-          />
-        </ParallaxBox>
-      </SequenceItem>
+    <SectionContent className="flex flex-col size-full items-center justify-between">
+      <div className="flex flex-col size-full items-center gap-5">
+        <SequenceItem className="my-5" index={0}>
+          <ParallaxBox className=" rounded-full w-full aspect-square shadow-2xl shadow-primary/40">
+            <img
+              className="size-full rounded-full mx-auto object-cover"
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=256&auto=format&fit=crop"
+              alt="Avatar"
+            />
+          </ParallaxBox>
+        </SequenceItem>
+        <div className="flex flex-col items-center">
+          <SequenceItem index={1}>
+            <Title text="Naïm El Habbas" />
+          </SequenceItem>
+          <SequenceItem index={2}>
+            <h2>
+              <ShinyText text="Fullstack developper" />
+            </h2>
+          </SequenceItem>
+        </div>
+        <SequenceItem index={3}>
+          <p className="text-center italic text-muted-foreground">
+            Proident minim sit sint enim ex esse enim. Labore elit in eiusmod est qui laboris
+            laboris amet cillum dolor laboris deserunt duis.
+          </p>
+        </SequenceItem>
+        <div className="flex w-full flex-wrap gap-2 justify-center">
+          {tags.map((v, i) => (
+            <SequenceItem index={i + 4}>
+              <Tag>{v}</Tag>
+            </SequenceItem>
+          ))}
+        </div>
+      </div>
+      <div className="w-full gap-3 flex justify-end items-center">
+        <SequenceItem index={tags.length + 4}>
+          <a className="rounded-full hover:text-primary transition-all cursor-pointer">
+            <FaGithub className="h-8 w-8" />
+          </a>
+        </SequenceItem>
+        <SequenceItem index={tags.length + 5}>
+          <a className="rounded-full hover:text-primary hover:text-primary transition-all cursor-pointer">
+            <FaLinkedin className="h-8 w-8" />
+          </a>
+        </SequenceItem>
+      </div>
     </SectionContent>
   );
 }
